@@ -35,7 +35,7 @@ The final completed database should have the following functionalities:
     2. This functionality will only be shown when a user is logged in
     3. To add a row, enter the name and author of the book and hit the add button in the last column
     4. The name of the lender should be logged in user’s and the borrower should be empty
-    5.  After adding a book, another column should appear with a blank book and author and add button.
+    5.  After adding a book, another row should appear with a blank book and author and add button.
 4. Return action
     1. This button appears on rows where the logged in user is the borrower as “Return”
     2. When no user is logged in, this button does not appear
