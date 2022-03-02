@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navigation-bar">
+        <div class="page-title">
+            Book club
+        </div>
+
+        <div class="logged-in-user-input">
+            <label>
+                <input id="logged-user" type="text"/>
+            </label>
+            <button onclick="changeLoggedInUser()">Log in</button>
+        </div>
+    </nav>
+
+    <section class="content-section">
+        <p id="logged-in-user-name">
+
+        </p>
+        <table class="book-table" id="info-table">
+            <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Lender
+                </th>
+                <th>
+                    Borrower
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            </thead>
+        </table>
+    </section>
+
+    <script type="text/javascript" src="library.js"></script>
+</body>
+</html>
