@@ -13,12 +13,11 @@ The database looks something like this (The actions column will have buttons app
 
 Here is what the completed page looks for the logged out and logged in user
 
-
-![](https://paper-attachments.dropbox.com/s_3E09E058E96613658D37268917179353FD8C1FB855BD8464ED266BCA41D484A8_1645614095251_Screenshot+2022-02-23+at+4.31.11+PM.png)
-
+![Screenshot 2022-03-02 at 10 11 28 PM](https://user-images.githubusercontent.com/10229595/156407182-1273780e-fae0-48d3-94d4-84157f7de0a7.png)
 
 
-![](https://paper-attachments.dropbox.com/s_3E09E058E96613658D37268917179353FD8C1FB855BD8464ED266BCA41D484A8_1645614095263_Screenshot+2022-02-23+at+4.31.00+PM.png)
+![Screenshot 2022-03-02 at 10 11 39 PM](https://user-images.githubusercontent.com/10229595/156407216-46476c81-1205-4271-b618-29ad7042ae9a.png)
+
 
 
 For purposes of this exercise, we have provided the basic HTML and CSS styles for you. You only need to write the Javascript code.
@@ -42,4 +41,5 @@ The final completed database should have the following functionalities:
     3. When clicked, the borrower’s name is removed from the field and it becomes blank
 5. Borrow action
     1. This button appears on rows where the borrower is blank
-    2. When clicked, the borrower column has the logged in user’s name and the “Borrow” button changed to “Return”
+    2. When no user is logged in, this button does not appear
+    3. When clicked, the borrower column has the logged in user’s name and the “Borrow” button changed to “Return”
