@@ -38,7 +38,7 @@ The final completed database should have the following functionalities:
 4. Return action
     1. This button appears on rows where the logged in user is the borrower as “Return”
     2. When no user is logged in, this button does not appear
-    3. When clicked, the borrower’s name is removed from the field and it becomes blank
+    3. When clicked, the borrower’s name is removed from the field and it becomes blank, and button changes from "Return" to "Borrow"
 5. Borrow action
     1. This button appears on rows where the borrower is blank
     2. When no user is logged in, this button does not appear
