@@ -69,6 +69,4 @@ function changeLoggedInUser() {
 
 function library(username) {
 
-
-
 }
