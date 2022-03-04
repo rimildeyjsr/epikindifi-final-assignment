@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Book Club</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <nav class="navigation-bar">
         <div class="page-title">
@@ -15,14 +13,7 @@
 
         <div class="logged-in-user-input">
             <label>
-                <input id="logged-user" type="text" list="datalist" onkeyup="handleAutoFill(this.value)" />
-                <datalist id="datalist">
-                    <option value="Ibrahimovic"></option>
-                    <option value="Zlatan"></option>
-                    <option value="Sergio"></option>
-                    <option value="Ramos"></option>
-                    <!-- This data list will be edited through javascript	 -->
-                </datalist>
+                <input id="logged-user" type="text"/>
             </label>
             <button onclick="changeLoggedInUser()">Log in</button>
         </div>
@@ -34,34 +25,30 @@
         </p>
         <table class="book-table" id="info-table">
             <thead>
-                <tr>
-                    <th>
-                        Id
-                    </th>
-                    <th>
-                        Title
-                    </th>
-                    <th>
-                        Author
-                    </th>
-                    <th>
-                        Lender
-                    </th>
-                    <th>
-                        Borrower
-                    </th>
-                    <th>
-                        Action
-                    </th>
-                </tr>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Lender
+                </th>
+                <th>
+                    Borrower
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
             </thead>
-            <tbody id="table_body">
-
-            </tbody>
         </table>
     </section>
 
     <script type="text/javascript" src="library.js"></script>
 </body>
-
 </html>
