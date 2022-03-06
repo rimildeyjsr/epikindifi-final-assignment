@@ -48,7 +48,7 @@ const books = [
 
 const User = ['UserA','UserB','UserC','UserD'];
 
-conm
+
 
 //This is the heading of the USER to be displayed whoever is logged in.
 let disp = document.getElementById('logged-in-user-name');
