@@ -46,6 +46,7 @@ const books = [
     },
 ];
 
+//List of all users in the library system.
 const User = ['UserA','UserB','UserC','UserD'];
 
 
@@ -54,12 +55,13 @@ const User = ['UserA','UserB','UserC','UserD'];
 let disp = document.getElementById('logged-in-user-name');
 disp.innerHTML = `No User logged in`;
 
-
+//Stores the current user logged in.
+let current_user = "";
 
 function display_table(){
 
     let tableData="";
-books.map((book) => {
+books.forEach((book) => {
     tableData += `<tr>
     <td>
         ${book.id}
@@ -77,10 +79,28 @@ books.map((book) => {
         ${book.Borrower}
     </td>
     <td>
-        -
+        ${
+            book.Lender === current_user
+            ? "-" : book.Borrower === current_user
+            ? "<button id='returnBook' onClick='returnBook(this)'>Return</button>"
+            : current_user && book.Borrower === "-"
+            ? "<button id='borrow' onClick='borrow(this)'>Borrow</button>"
+            : "-"
+        }
     </td>
-</tr>`
+</tr>`;
 });
+
+if(current_user) {
+    document.getElementById('info-table').innerHTML += `<tr>
+    <td>${books.length + 1}</td>
+    <td><input type="text" id="title" placeholder="Title"></td>
+    <td><input type="text" id="author" placeholder="Author"></td>
+    <td>${current_user}</td>
+    <td>-</td>
+    <td><button id="addBook" onClick="addBook()">Add Book</button></td>
+</tr>`;
+}
 
 /* Adding Attributes of class and id to the table head*/
 const table_head = document.querySelector("thead");
@@ -97,14 +117,16 @@ document.getElementById("info-table-head").after(table_body); //Placing the tbod
 document.getElementById("info-table-body").innerHTML = tableData;
 }
 
+
 display_table();
 
 function changeLoggedInUser(){
     let input_user = document.getElementById('logged-user').value;
+    current_user = input_user;
     let user_present = false;
     User.map((users) => {
         if(input_user===users){
-            user_present = "true";
+            user_present = true;
             disp.innerHTML = `Logged in user: ${input_user}`;
         }
         // else if(input_present===" "){
@@ -125,3 +147,39 @@ function changeLoggedInUser(){
 }
 
 
+function borrow(node) {
+    const bookId = Number(node.parentNode.parentNode.childNodes[0].innerText);
+    const bookIndex = books.findIndex((book) => book.id === bookId);
+    books[bookIndex].borrower = input_user;
+
+    display_table();
+}
+
+
+function returnBook(node) {
+    const bookId = Number(node.parentNode.parentNode.childNodes[0].innerText);
+    const bookIndex = books.findIndex((book) => book.id === bookId);
+    books[bookIndex].borrower = "-";
+    display_table();
+}
+
+function addBook() {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const book = {
+        id: books.length + 1,
+        Title: title,
+        Author: author,
+        Lender: current_user,
+        Borrower: "-",
+    };
+    if(Title && Author) {
+        books.push(book);
+        display_table();
+    }
+    else
+    {
+        alert("Please enter all the fields of the book");
+    }
+    display_table();
+}
